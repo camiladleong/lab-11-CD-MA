@@ -7,12 +7,16 @@ from calculator import *
 
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
-    # def test_add(self): # 3 assertions
-    #     fill in code
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 5), 4)
+        self.assertEqual(add(0, 100), 100)
+        
 
-    # def test_subtract(self): # 3 assertions
-    #     fill in code
-    # ##########################
+    def test_subtract(self):
+        self.assertEqual(subtract(10, 4), 6)
+        self.assertEqual(subtract(-2, -5), 3)
+        self.assertEqual(subtract(0, 7), -7)
 
     ######## Partner 1
     def test_multiply(self): # 3 assertions
@@ -26,19 +30,19 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(divide(5, 2), 2.5)
 
     ######## Partner 2
-    # def test_divide_by_zero(self): # 1 assertion
-    #     # call division function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     div(0, 5)
-    #     fill in code
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            divide(10, 0)
+            
+    def test_logarithm(self):
+        self.assertAlmostEqual(logarithm(2, 8), 3)
+        self.assertAlmostEqual(logarithm(10, 100), 2)
+        self.assertAlmostEqual(logarithm(5, 1), 0)
+    
 
-    # def test_logarithm(self): # 3 assertions
-    #     fill in code
-
-    # def test_log_invalid_base(self): # 1 assertion
-    #     # use same technique from test_divide_by_zero
-    #     fill in code
-    # ##########################
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            logarithm(1, 10)
     
     ######## Partner 1
     def test_log_invalid_argument(self): # 1 assertion
