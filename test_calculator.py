@@ -1,4 +1,8 @@
 import unittest
+#https://github.com/camiladleong/lab-11-CD-MA.git
+#Partner 1: Camila D' Leon
+#Partner 2: Muhammad Athar
+
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
@@ -11,12 +15,15 @@ class TestCalculator(unittest.TestCase):
     # ##########################
 
     ######## Partner 1
-    # def test_multiply(self): # 3 assertions
-    #     fill in code
+    def test_multiply(self): # 3 assertions
+        self.assertEqual(multiply(3, 4), 12)
+        self.assertEqual(multiply(-2, 5), -10)
+        self.assertEqual(multiply(0, 100), 0)
 
-    # def test_divide(self): # 3 assertions
-    #     fill in code
-    # ##########################
+    def test_divide(self): # 3 assertions
+        self.assertEqual(divide(10, 2), 5)
+        self.assertEqual(divide(-9, 3), -3)
+        self.assertAlmostEqual(divide(5, 2), 2.5)
 
     ######## Partner 2
     # def test_divide_by_zero(self): # 1 assertion
@@ -34,22 +41,21 @@ class TestCalculator(unittest.TestCase):
     # ##########################
     
     ######## Partner 1
-    # def test_log_invalid_argument(self): # 1 assertion
-    #     # call log function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     logarithm(0, 5)
-    #     fill in code
+    def test_log_invalid_argument(self): # 1 assertion
+        with self.assertRaises(ValueError):
+            logarithm(10, 0)
 
-    # def test_hypotenuse(self): # 3 assertions
-    #     fill in code
+    def test_hypotenuse(self): # 3 assertions
+        self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
+        self.assertAlmostEqual(hypotenuse(5, 12), 13.0)
+        self.assertAlmostEqual(hypotenuse(0, 7), 7.0)
 
-    # def test_sqrt(self): # 3 assertions
-    #     # Test for invalid argument, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #    square_root(NUM)
-    #     # Test basic function
-    #     fill in code
-    ##########################
+    def test_sqrt(self): # 3 assertions
+        with self.assertRaises(ValueError):
+            square_root(-4)
+        self.assertEqual(square_root(0), 0)
+        self.assertEqual(square_root(9), 3)
+        self.assertAlmostEqual(square_root(2), 2 ** 0.5)
 
 # Do not touch this
 if __name__ == "__main__":
