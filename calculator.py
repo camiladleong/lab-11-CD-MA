@@ -16,13 +16,13 @@ def add(a, b):
 def subtract(a, b):
     return a - b
 
-def mul(a, b):
+def multiply(a, b):
     return a * b
 
-def div(a, b):
-    if b == 0:
+def divide(a, b):
+    if a == 0:
         raise ZeroDivisionError("Cannot divide by zero")
-    return a / b
+    return b/a
 
 def logarithm(base, value):
     if base <= 0 or base == 1:
@@ -31,7 +31,7 @@ def logarithm(base, value):
         raise ValueError("Logarithm undefined for non-positive values")
     return math.log(value, base)
 
-def exp(a, b):
+def exponent(a, b):
     return a ** b
 
 def hypotenuse(a, b):
