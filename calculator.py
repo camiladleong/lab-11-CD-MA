@@ -24,12 +24,12 @@ def divide(a, b):
         raise ZeroDivisionError("Cannot divide by zero")
     return a / b
 
-def logarithm(a, b):
-    if b <= 0:
-        raise ValueError("Logarithm undefined for non-positive values")
-    if a <= 0 or a == 1:
+def logarithm(base, value):
+    if base <= 0 or base == 1:
         raise ValueError("Invalid base for logarithm")
-    return math.log(b, a)
+    if value <= 0:
+        raise ValueError("Logarithm undefined for non-positive values")
+    return math.log(value, base)
 
 def exponent(a, b):
     return a ** b
