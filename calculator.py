@@ -13,31 +13,31 @@ import math
 def add(a, b):
     return a + b
 
-def subtract(a, b):
+def sub(a, b):
     return a - b
 
-def multiply(a, b):
+def mul(a, b):
     return a * b
 
-def divide(a, b):
-    if a == 0:
+def div(a, b):
+    if b == 0:
         raise ZeroDivisionError("Cannot divide by zero")
-    return b/a
+    return a / b
 
-def logarithm(base, value):
-    if base <= 0 or base == 1:
-        raise ValueError("Invalid base for logarithm")
-    if value <= 0:
+def log(a, b):
+    if b <= 0:
         raise ValueError("Logarithm undefined for non-positive values")
-    return math.log(value, base)
+    if a <= 0 or a == 1:
+        raise ValueError("Invalid base for logarithm")
+    return math.log(b, a)
 
-def exponent(a, b):
+def exp(a, b):
     return a ** b
 
 def hypotenuse(a, b):
     return math.hypot(a, b)
 
-def square_root(x):
-    if x < 0:
+def square_root(a):
+    if a < 0:
         raise ValueError("Cannot take square root of a negative number")
-    return math.sqrt(x)
+    return math.sqrt(a)
