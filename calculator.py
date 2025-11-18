@@ -13,7 +13,7 @@ import math
 def add(a, b):
     return a + b
 
-def sub(a, b):
+def subtract(a, b):
     return a - b
 
 def mul(a, b):
@@ -24,7 +24,7 @@ def div(a, b):
         raise ZeroDivisionError("Cannot divide by zero")
     return a / b
 
-def log(base, value):
+def logarithm(base, value):
     if base <= 0 or base == 1:
         raise ValueError("Invalid base for logarithm")
     if value <= 0:
